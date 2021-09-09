@@ -10,7 +10,7 @@
   padding-right: 1em;
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
-  max-width: 120%;
+  max-width: 100%;
   -webkit-animation-delay: 0.15s;
   animation-delay: 0.15s;
 
@@ -38,7 +38,7 @@ body {
 .page {
   @include breakpoint($large) {
     float: right;
-    width: calc(100% - #{$right-sidebar-width-narrow});
+    width: calc(73% - #{$right-sidebar-width-narrow});
     padding-right: $right-sidebar-width-narrow;
   }
 
