@@ -7,10 +7,10 @@
   margin-left: auto;
   margin-right: auto;
   padding-left: 1em;
-  padding-right: 0em;
+  padding-right: 1em;
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
-  max-width: 100%;
+  max-width: 73%;
   -webkit-animation-delay: 0.15s;
   animation-delay: 0.15s;
 
@@ -185,7 +185,7 @@ body {
 
     .wrapper {
       padding-left: 1em;
-      padding-right: 0;
+      padding-right: 1em;
 
       @include breakpoint($x-large) {
         max-width: $x-large;
