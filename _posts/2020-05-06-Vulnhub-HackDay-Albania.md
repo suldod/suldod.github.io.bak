@@ -10,7 +10,7 @@ tags:
   - sqli  
   - auth-bypass
   - write-perm
-author_profile: false
+author_profile: true
 ---
 
 ## Summary
