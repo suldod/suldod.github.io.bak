@@ -1,7 +1,7 @@
 ---
 title: about me  
 permalink: /about/
-layout : single
+layout : archive
 author_profile : false
 ---
 
