@@ -11,7 +11,7 @@ tags:
   - rce
   - buffer-overflow
   - CloudMe
-author_profile: false
+author_profile: true
 ---
 
 ![card](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/master/assets/images/buff-writeup/buff.png)
