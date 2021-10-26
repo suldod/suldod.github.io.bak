@@ -175,3 +175,7 @@ $entry = $class.GetMethod("Boom", $flags)
 
 $entry.Invoke($null, (, $cmd.Split(" ")))
 ```
+
+Clean execution , no trigger of the Antivirus and a functional meterpreter session!
+
+![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/img4.png)
