@@ -20,30 +20,16 @@ First let's take a view :
 
 - [https://github.com/TheWover/DInvoke](https://github.com/TheWover/DInvoke)
  
-DInvoke is a dynamic replacement for PInvoke and contains powerful primitives that can be combined to dynamically invoke unmanaged code from disk or from memory.
-It helps you use unmanaged code from C# while avoiding suspicious P/Invokes. Rather than statically importing API calls with PInvoke, you may use Dynamic Invocation to load the DLL at runtime and call the function using a pointer to its location in memory. You may call arbitrary unmanaged code from memory (while passing parameters), allowing you to bypass API hooking in a variety of ways and execute post-exploitation payloads reflectively.
+>*DInvoke is a dynamic replacement for PInvoke and contains powerful primitives that can be combined to dynamically invoke unmanaged code from disk or from memory.
+It helps you use unmanaged code from C# while avoiding suspicious P/Invokes. Rather than statically importing API calls with PInvoke, you may use Dynamic Invocation to load the DLL at runtime and call the function using a pointer to its location in memory. You may call arbitrary unmanaged code from memory (while passing parameters), allowing you to bypass API hooking in a variety of ways and execute post-exploitation payloads reflectively.*
 
 Rather than using PInvoke to import the API calls that we want to use, we load a DLL into memory manually. This can be done using whatever mechanism you would prefer. Then, we get a pointer to a function in that DLL. We may call that function from the pointer while passing in our parameters.
 
 By leveraging this dynamic loading API rather than the static loading API that sits behind PInvoke, you avoid directly importing suspicious API calls into your .NET Assembly.
 
 To show that little proof of concept of how it is done at a concrete target I will use [DInjector](https://github.com/snovvcrash/DInjector)
-```
-(    (
-     )\ ) )\ )                   )             (   (  (
-    (()/((()/(     (    (     ( /(    (        )\ ))\ )\
-     /(_))/(_))(   )\  ))\ (  )\())(  )(      (()/((_|(_)
-    (_))_(_))  )\ |(_)/((_))\(_))/ )\(()\      ((_))  _
-     |   \_ _|_(_/( !(_)) ((_) |_ ((_)((_)     _| | || |
-     | |) | || ' \)) / -_) _||  _/ _ \ '_|  _/ _` | || |
-     |___/___|_||_|/ \___\__| \__\___/_|   (_)__,_|_||_|
-                 |__/-----------------------------------
-                                                K E E P
-                                                C A L M
-                                                  A N D
-                                       D / I N 💉 E C T
-                                      S H E L L C O D E
-```
+
+![img](urlhere)
 
 DInjector is a tool which is fully ported on `DInvoke` APIs and simulates the concept of executing code through dynamic invocatuion in easier steps for people like me who are generally dumb.
 
