@@ -1,10 +1,9 @@
 ---
 layout: single
-title: "Making use of DInvoke as a better evasion practice , avoiding PInvoke & API Hooks"
+title: "Making use of DInvoke as a better Antivirus Evasion practice, avoiding PInvoke & API Hooks"
 date: 2021-10-26
 tags:  
   - windows
-  - avbypass
   - dinvoke
   - windows-defender
 author_profile: true
@@ -16,9 +15,11 @@ Lately I have been focused on Windows stuff, such as excercises on trying to byp
 
 In this article I'm going to explain how you can make use of Dynamic Invocation instead of PInvoke for a less suspicios execution.
 
-First let's take a view :
+First let's take a view at this repository :
 
 - [https://github.com/TheWover/DInvoke](https://github.com/TheWover/DInvoke)
+
+## What is DInvoke?
  
 >*DInvoke is a dynamic replacement for PInvoke and contains powerful primitives that can be combined to dynamically invoke unmanaged code from disk or from memory.
 It helps you use unmanaged code from C# while avoiding suspicious P/Invokes. Rather than statically importing API calls with PInvoke, you may use Dynamic Invocation to load the DLL at runtime and call the function using a pointer to its location in memory. You may call arbitrary unmanaged code from memory (while passing parameters), allowing you to bypass API hooking in a variety of ways and execute post-exploitation payloads reflectively.*
