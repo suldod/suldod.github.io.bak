@@ -43,7 +43,7 @@ While desperatly googling about examples of DInvoke being used on an actual Proo
                                       S H E L L C O D E
 ```
 
-The repo consists of a shellcode encrypter which makes use of `base64` and encrypts the file with a password using sha256.
+The repo consists of a shellcode encrypter which makes use of `xor` or `aes` algorithms and encrypts the file with a password using sha256.
 
 - encrypter.py
 ```python
