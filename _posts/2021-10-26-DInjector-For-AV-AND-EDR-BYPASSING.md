@@ -26,7 +26,8 @@ You can have this reference for a deeper explaination on what DInvoke does and w
 
 While desperatly googling about examples of DInvoke being used on an actual Proof of Concept for silent Code Execution I ended up finding this amazing tool which is fully ported on DInvoke APIs : [https://github.com/snovvcrash/DInjector](https://github.com/snovvcrash/DInjector)
 
-```     (    (
+```
+(    (
      )\ ) )\ )                   )             (   (  (
     (()/((()/(     (    (     ( /(    (        )\ ))\ )\
      /(_))/(_))(   )\  ))\ (  )\())(  )(      (()/((_|(_)
