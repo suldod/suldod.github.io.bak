@@ -108,7 +108,7 @@ if __name__ == '__main__':
 
 I could use Visual Studio to compile the DLL project but doing everything in linux just fits in perfectly. I wasnt aware there was a developer tool such as ``monodeveloper`` which could handle `C#` and `.NET` compiling on linux.
 
-![img1](urlhere)
+![img1](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/DInjector1.png)
 
 The walkthrough after compiling the DLL is pretty much straightforwards, I am going to create a meterpreter shellcode and have the output as raw : 
 
