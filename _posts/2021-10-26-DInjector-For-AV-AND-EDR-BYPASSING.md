@@ -11,8 +11,7 @@ author_profile: true
 ---
 ![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/defender.webp)
 
-Hello back fellow red teamers. I decided to come make a blog post after a little of long period in which I lost all of my other blog posts.
-
+Hello back fellow red teamers!!
 Lately I have been focused on Windows stuff, such as excercises on trying to bypass Windows Defender through trial and errors etc as a practice to upgrade my own skills on red teaming.
 
 In this article I'm going to explain how you can make use of Dynamic Invocation instead of PInvoke for a less suspicios execution.
@@ -34,9 +33,8 @@ To show that little proof of concept of how it is done at a concrete target I wi
 
 DInjector is a tool which is fully ported on `DInvoke` APIs and simulates the concept of executing code through dynamic invocatuion in easier steps for people like me who are generally dumb.
 
-Below is shown the content of encrypter.py which takes a raw shellcode payload and encodes it using either `AES` or `XOR` up to your preference.
+Below is shown the content of `encrypter.py` which takes a raw shellcode payload and encodes it using either `AES` or `XOR` up to your preference.
 
-- encrypter.py
 
 ```python
 #!/usr/bin/env python3
