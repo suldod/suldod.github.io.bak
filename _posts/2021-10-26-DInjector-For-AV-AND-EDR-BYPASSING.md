@@ -29,7 +29,7 @@ By leveraging this dynamic loading API rather than the static loading API that s
 
 To show that little proof of concept of how it is done at a concrete target I will use [DInjector](https://github.com/snovvcrash/DInjector)
 
-![img](urlhere)
+![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/img1.png)
 
 DInjector is a tool which is fully ported on `DInvoke` APIs and simulates the concept of executing code through dynamic invocatuion in easier steps for people like me who are generally dumb.
 
@@ -123,7 +123,7 @@ Before executing let's make sure Windows Defender is up to date.
 
 ![img3](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/img3.png)
 
-To load the DLL into the memory and call the shellcode you might want to run ``cradle.ps1`` if you dont want to do it manually...
+To load the DLL into the memory and call the shellcode you can use ``cradle.ps1`` which is part of the ``DInjector`` repo.
 
 ```powershell
 # MODULE
@@ -170,6 +170,11 @@ $entry = $class.GetMethod("Boom", $flags)
 $entry.Invoke($null, (, $cmd.Split(" ")))
 ```
 
-Clean execution , no trigger of the Antivirus and a functional meterpreter session!
+Clean execution , no trigger of the Antivirus and a functional meterpreter session!  
+It succesfully beat a fully updated Windows Defender, I was surprised!
 
 ![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/img4.png)
+
+### References
+
+Most of the ``DInvoke`` concept explaination paragraphs are based on [https://thewover.github.io/Dynamic-Invoke/](https://thewover.github.io/Dynamic-Invoke/)
