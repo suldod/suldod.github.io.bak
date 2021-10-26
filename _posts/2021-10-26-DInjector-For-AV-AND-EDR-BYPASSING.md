@@ -29,6 +29,8 @@ Rather than using PInvoke to import the API calls that we want to use, we load a
 
 By leveraging this dynamic loading API rather than the static loading API that sits behind PInvoke, you avoid directly importing suspicious API calls into your .NET Assembly.
 
+## Practical Example of DInvoke to Shellcode Execution
+
 To show that little proof of concept of how it is done at a concrete target I will use [DInjector](https://github.com/snovvcrash/DInjector)
 
 ![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/img1.png)
