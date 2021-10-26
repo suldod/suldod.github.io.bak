@@ -9,6 +9,7 @@ tags:
   - windows-defender
 author_profile: true
 ---
+![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/defender.webp)
 
 Hello back fellow red teamers. I decided to come make a blog post after a little of long period in which I lost all of my other blog posts.
 
