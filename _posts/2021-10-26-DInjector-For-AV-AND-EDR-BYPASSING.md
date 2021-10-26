@@ -10,7 +10,8 @@ author_profile: true
 ---
 ![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/defender.webp)
 
-Hello back fellow red teamers!!
+Hello back fellow red teamers!!  
+
 Lately I have been focused on Windows stuff, such as excercises on trying to bypass Windows Defender through trial and errors etc as a practice to upgrade my own skills on red teaming.
 
 In this article I'm going to explain how you can make use of Dynamic Invocation instead of PInvoke for a less suspicios execution.
