@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Trying out DInjector as a AV/EDR bypassing tool, fully ported to DInvoke APIs"
+title: "Making use of DInvoke as a better evasion practice , avoiding PInvoke & API Hooks"
 date: 2021-10-26
 tags:  
   - windows
@@ -12,20 +12,22 @@ author_profile: true
 
 Hello back fellow red teamers. I decided to come make a blog post after a little of long period in which I lost all of my other blog posts.
 
-Lately I have been focused on Windows stuff, such as excercises on trying to bypass Windows Defender through trial and errors etc as a practice to help me make some preparations for a possible OSEP attempt lol.
+Lately I have been focused on Windows stuff, such as excercises on trying to bypass Windows Defender through trial and errors etc as a practice to upgrade my own skills on red teaming.
 
-I came across some amazing repos which I though would be worth to explain on a blog.
+In this article I'm going to explain how you can make use of Dynamic Invocation instead of PInvoke for a less suspicios execution.
 
 First let's take a view :
 
 - [https://github.com/TheWover/DInvoke](https://github.com/TheWover/DInvoke)
  
-DInvoke is dynamic replacement for PInvoke and contains powerful primitives that can be combined to dynamically invoke unmanaged code from disk or from memory.
+DInvoke is a dynamic replacement for PInvoke and contains powerful primitives that can be combined to dynamically invoke unmanaged code from disk or from memory.
+It helps you use unmanaged code from C# while avoiding suspicious P/Invokes. Rather than statically importing API calls with PInvoke, you may use Dynamic Invocation to load the DLL at runtime and call the function using a pointer to its location in memory. You may call arbitrary unmanaged code from memory (while passing parameters), allowing you to bypass API hooking in a variety of ways and execute post-exploitation payloads reflectively.
 
-You can have this reference for a deeper explaination on what DInvoke does and what it really is : [https://thewover.github.io/Dynamic-Invoke/](https://thewover.github.io/Dynamic-Invoke/)
+Rather than using PInvoke to import the API calls that we want to use, we load a DLL into memory manually. This can be done using whatever mechanism you would prefer. Then, we get a pointer to a function in that DLL. We may call that function from the pointer while passing in our parameters.
 
-While desperatly googling about examples of DInvoke being used on an actual Proof of Concept for silent Code Execution I ended up finding this amazing tool which is fully ported on DInvoke APIs : [https://github.com/snovvcrash/DInjector](https://github.com/snovvcrash/DInjector)
+By leveraging this dynamic loading API rather than the static loading API that sits behind PInvoke, you avoid directly importing suspicious API calls into your .NET Assembly.
 
+To show that little proof of concept of how it is done at a concrete target I will use [DInjector](https://github.com/snovvcrash/DInjector)
 ```
 (    (
      )\ ) )\ )                   )             (   (  (
@@ -43,7 +45,9 @@ While desperatly googling about examples of DInvoke being used on an actual Proo
                                       S H E L L C O D E
 ```
 
-The repo consists of a shellcode encrypter which makes use of `xor` or `aes` algorithms and encrypts the file with a password using sha256 and the DLL project which we will be loading into the memory to execute code.
+DInjector is a tool which is fully ported on `DInvoke` APIs and simulates the concept in easier steps for people like me who are generally dumb.
+
+Below is shown the content of encrypter.py which takes a raw shellcode payload and encodes it using either `AES` or `XOR` up to your preference.
 
 - encrypter.py
 
@@ -106,6 +110,10 @@ if __name__ == '__main__':
 		print(f'[+] Encrypted shellcode file: {args.output}')
 ```
 
+*>OK? WHATS NEXT?*
+
+Of course I need to compile the ``DInjector`` project which will output the `.DLL` file that is going to be loaded into the memory in order to call the shellcode.
+
 I could use Visual Studio to compile the DLL project but doing everything in linux just fits in perfectly. I wasnt aware there was a developer tool such as ``monodeveloper`` which could handle `C#` and `.NET` compiling on linux.
 
 ![img1](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/DInjector1.png)
@@ -121,7 +129,7 @@ Payload size: 906 bytes
 Saved as: shellcode.bin
 ```
 
-Setting up a listener which will serve the DLL to be loaded and the shellcode : 
+Encryping the shellcode and setting up a listener which will serve the files that we need to load on the target machine : 
 
 ![img2](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/img2.png)
 
@@ -129,7 +137,7 @@ Before executing let's make sure Windows Defender is up to date.
 
 ![img3](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/img3.png)
 
-To load the DLL into the memory and call the shellcode you might want to run cradle.ps1 if you dont want to do it manually...
+To load the DLL into the memory and call the shellcode you might want to run ``cradle.ps1`` if you dont want to do it manually...
 
 ```powershell
 # MODULE
