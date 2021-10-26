@@ -45,7 +45,7 @@ To show that little proof of concept of how it is done at a concrete target I wi
                                       S H E L L C O D E
 ```
 
-DInjector is a tool which is fully ported on `DInvoke` APIs and simulates the concept in easier steps for people like me who are generally dumb.
+DInjector is a tool which is fully ported on `DInvoke` APIs and simulates the concept of executing code through dynamic invocatuion in easier steps for people like me who are generally dumb.
 
 Below is shown the content of encrypter.py which takes a raw shellcode payload and encodes it using either `AES` or `XOR` up to your preference.
 
@@ -110,7 +110,7 @@ if __name__ == '__main__':
 		print(f'[+] Encrypted shellcode file: {args.output}')
 ```
 
-*>OK? WHATS NEXT?*
+>*OK? WHATS NEXT?*
 
 Of course I need to compile the ``DInjector`` project which will output the `.DLL` file that is going to be loaded into the memory in order to call the shellcode.
 
