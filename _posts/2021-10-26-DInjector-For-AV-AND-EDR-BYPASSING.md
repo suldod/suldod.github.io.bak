@@ -120,3 +120,7 @@ No encoder specified, outputting raw payload
 Payload size: 906 bytes
 Saved as: shellcode.bin
 ```
+
+Setting up a listener which will serve the DLL to be loaded and the shellcode : 
+
+![img2](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/img2.png)
