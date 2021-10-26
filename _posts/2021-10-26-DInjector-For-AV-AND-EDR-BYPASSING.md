@@ -35,7 +35,7 @@ To show that little proof of concept of how it is done at a concrete target I wi
 
 ![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/img1.png)
 
-DInjector is a tool which is fully ported on `DInvoke` APIs and simulates the concept of executing code through dynamic invocatuion in easier steps for people like me who are generally dumb.
+DInjector is a tool which is fully ported on `DInvoke` APIs and simulates the concept of executing code through dynamic invocation in easier steps for people like me who are generally dumb.
 
 Below is shown the content of `encrypter.py` which takes a raw shellcode payload and encodes it using either `AES` or `XOR` up to your preference.
 
