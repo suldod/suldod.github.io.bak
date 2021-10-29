@@ -178,6 +178,17 @@ It succesfully beat a fully updated Windows Defender, I was surprised!
 
 ![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/img4.png)
 
+## Migrating to Cobaltstrike
+
+The process would be quite similar on cobaltstrike as well. Here we use a RAW x64 beacon instead of the msfvenom shellcode.
+
+![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/cobalt1.png)
+![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/cobalt2.png)
+
+Afterwards we go on to encode the generated shellcode one more time :
+
+![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/cobalt3.png)
+
 ### References
 
 Most of the ``DInvoke`` concept explaination paragraphs are based on [https://thewover.github.io/Dynamic-Invoke/](https://thewover.github.io/Dynamic-Invoke/)
