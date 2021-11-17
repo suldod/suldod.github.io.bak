@@ -25,7 +25,12 @@ While integrating the BOF.NET dll and writing the class to execute the applicati
 Firstly you can download the DLL from the BOF.NET releases page : [https://github.com/CCob/BOF.NET/releases](https://github.com/CCob/BOF.NET/releases) or build it from the source code if you would like.
 
 Afterwards you would want to Add the `dll` as a Reference to SharpKatz Source Code :
+
 ![img1](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post3/bof3.png)
+
+I will go on and create a new C# Class file to add it into the SharpKatz code which will be the Execution class with the following little piece of code :
+
+![img2](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post3/bof3.png)
 
 ```csharp
 using System;
