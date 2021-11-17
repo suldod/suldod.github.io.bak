@@ -6,6 +6,7 @@ tags:
   - windows
   - bof
   - red-team
+  - c#
 author_profile: true
 ---
 
@@ -22,6 +23,9 @@ Source : [https://github.com/CCob/BOF.NET](https://github.com/CCob/BOF.NET)
 While integrating the BOF.NET dll and writing the class to execute the application as a BOF file would look a little "hard" or messy I tried to keep the walkthrough as simple as possible.
 
 Firstly you can download the DLL from the BOF.NET releases page : [https://github.com/CCob/BOF.NET/releases](https://github.com/CCob/BOF.NET/releases) or build it from the source code if you would like.
+
+Afterwards you would want to Add the `dll` as a Reference to SharpKatz Source Code :
+![img1]()
 
 ```csharp
 using System;
