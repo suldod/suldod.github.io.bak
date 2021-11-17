@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "A look at BOF.NET, setting up for use with Cobalt Strike"
-date: 2021-10-26
+date: 2021-11-17
 tags:  
   - windows
   - bof
@@ -88,3 +88,9 @@ It needs to be callable so BOF.NET can be able to forward arguments to the main 
 
 
 ## Importing BOF.NET to Cobalt Strike
+
+When all that has been set up we can go on and build the project which will output the final `SharpKatz.exe` ready to be used as a BOF file.
+
+Use the CNA script already included in the source code of BOF.NET to load the script on cobalt strike using script manager:
+
+![img4](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post3/bof.png)
