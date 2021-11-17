@@ -28,9 +28,11 @@ Afterwards you would want to Add the `dll` as a Reference to SharpKatz Source Co
 
 ![img1](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post3/bof3.png)
 
-I will go on and create a new C# Class file to add it into the SharpKatz code which will be the Execution class with the following little piece of code :
+I will go on and create a new C# Class file to add it into the SharpKatz code which will contain the BOF.NET custom class
 
 ![img2](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post3/bof4.png)
+
+This little piece of code basically takes user's arguments and forwards them to the real program's Main() function to avoid hardcoding.
 
 ```csharp
 using System;
@@ -71,6 +73,18 @@ namespace SharpKatz
     }
 }
 ```
+Make sure you have also checked the main function name on the existing .NET project (SharpKatz in my example) and that the access modifier is set to public : 
+
+```csharp
+namespace SharpKatz
+{
+    public class Program
+    {
+
+        public static void Main(string[] args)
+```
+
+It needs to be callable so BOF.NET can be able to forward arguments to the main function.
 
 
 ## Importing BOF.NET to Cobalt Strike
