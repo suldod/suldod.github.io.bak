@@ -30,7 +30,7 @@ Afterwards you would want to Add the `dll` as a Reference to SharpKatz Source Co
 
 I will go on and create a new C# Class file to add it into the SharpKatz code which will be the Execution class with the following little piece of code :
 
-![img2](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post3/bof3.png)
+![img2](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post3/bof4.png)
 
 ```csharp
 using System;
