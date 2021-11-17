@@ -14,3 +14,6 @@ author_profile: true
 BOF.NET is a small native BOF object combined with the BOF.NET managed runtime that enables the development of Cobalt Strike BOFs directly in .NET. BOF.NET removes the complexity of native compilation along with the headaches of manually importing native API
 
 Source : [https://github.com/CCob/BOF.NET](https://github.com/CCob/BOF.NET)
+
+## Porting BOF.NET Classes to SafetyKatz
+
