@@ -17,5 +17,45 @@ Source : [https://github.com/CCob/BOF.NET](https://github.com/CCob/BOF.NET)
 
 ## Importing BOF.NET to Cobalt Strike
 
-## Porting BOF.NET Classes to SafetyKatz
+## Porting BOF.NET Classes to SharpKatz
+
+```C#
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using BOFNET;
+
+namespace SharpKatz
+{
+    public class Execute : BeaconObject
+    {
+        public Execute(BeaconApi api) : base(api) { }
+        public override void Go(string[] args)
+        {
+            try
+            {
+                // Redirect stdout to MemoryStream
+                var memStream = new MemoryStream();
+                var memStreamWriter = new StreamWriter(memStream);
+                memStreamWriter.AutoFlush = true;
+                Console.SetOut(memStreamWriter);
+                Console.SetError(memStreamWriter);
+
+                // Run main program passing original arguments
+                Program.Main(args);
+
+                // Write MemoryStream to Beacon output
+                BeaconConsole.WriteLine(Encoding.ASCII.GetString(memStream.ToArray()));
+
+            }
+            catch (Exception ex)
+            {
+                BeaconConsole.WriteLine(String.Format("\nBOF.NET Exception: {0}.", ex));
+            }
+        }
+    }
+}
+```
 
