@@ -112,3 +112,5 @@ beacon> bofnet_load /home/pi0x73/SharpKatz.exe
 [+] Loaded assembly SharpKatz, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null successfully
 [=] Assembly has been prepared with Costura|dnMerge, running embedded assembly resolver
 ```
+
+![gif](https://im4.ezgif.com/tmp/ezgif-4-b67d77acbc7d.gif)
