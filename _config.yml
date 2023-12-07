@@ -19,8 +19,8 @@ locale                   : "en-US"
 title                    : "pi0x73@blog:~$"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "pi0x73"
-description              : "Red teaming stuff, web application security and CTF writeups"
+name                     : "Suljot"
+description              : "had no description in mind, just random stuff i guess..."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -96,7 +96,7 @@ analytics:
 author:
   name             : "pi0x73"
   avatar           : "/assets/images/logo.jpg"
-  bio              : "Red teaming stuff, web application security and CTF writeups."
+  bio              : "had no description in mind, just random stuff i guess..."
   location         : 
   email            :
   links:
@@ -108,7 +108,7 @@ author:
       # url: "https://your-website.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
+      url: "https://twitter.com/suljotgjokaa"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
