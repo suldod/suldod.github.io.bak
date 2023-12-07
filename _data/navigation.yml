@@ -2,8 +2,6 @@
 main:
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "notes"
-    url: https://pi0x73.gitbook.io/notes/
   - title: "about"
     url: /about/
   # - title: "Sample Collections"
