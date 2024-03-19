@@ -92,8 +92,8 @@ analytics:
     anonymize_ip         : # true, false (default)
 
 
-# Site Author
-author:
+# Site 
+:
   name             : "Suljot"
   avatar           : "/assets/images/logo.jpg"
   bio              : "had no description in mind, just random stuff i guess..."
